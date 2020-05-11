@@ -5,6 +5,9 @@ import org.apache.commons.lang3.StringUtils;
 
 import java.util.Map;
 
+/**
+ * Filters out lines with unknown nutriscores
+ */
 public class RemoveEmptyNutriScoreFilter implements SerializableFunction<Map<String, String>, Boolean> {
 
     @Override

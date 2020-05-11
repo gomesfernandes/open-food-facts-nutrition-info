@@ -6,6 +6,10 @@ import org.apache.beam.sdk.transforms.DoFn;
 import java.util.HashMap;
 import java.util.Map;
 
+/**
+ * Split the tab-seperated values to a Map, using the predefined {@link Dataset} header.
+ * The line containing the header itself is ignored.
+ */
 public class LineSplitFn extends DoFn<String, Map<String, String>> {
 
     private static final String SPLIT_SYMBOL = "\t";

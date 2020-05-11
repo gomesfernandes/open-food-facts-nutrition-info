@@ -4,6 +4,9 @@ import org.apache.beam.sdk.options.Default;
 import org.apache.beam.sdk.options.Description;
 import org.apache.beam.sdk.options.PipelineOptions;
 
+/**
+ * Parse the pipeline options
+ */
 public interface NutritionPipelineOptions extends PipelineOptions {
     @Description("Path of the file to read from (local file or Google Cloud Storage bucket)")
     @Default.String("openfood_sample.csv")

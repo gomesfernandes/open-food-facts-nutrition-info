@@ -3,6 +3,9 @@ package transform;
 import org.apache.beam.sdk.transforms.SimpleFunction;
 import java.util.Map;
 
+/**
+ * Transform the mappings to a human-readable output string
+ */
 public class FormatOutputFn extends SimpleFunction<Map<String, String>, String> {
 
     @Override
