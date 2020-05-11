@@ -8,8 +8,7 @@ from airflow.operators.python_operator import PythonOperator
 from airflow.utils.dates import days_ago
 
 AIRFLOW_HOME = os.environ.get('AIRFLOW_HOME')
-OPEN_FOOD_FACTS_URL = 'https://www.data.gouv.fr/fr/datasets/r/164c9e57-32a7-4f5b-8891-26af10f91072'
-HEADERS = {'X-API-KEY': os.environ.get('DATA_FR_API_KEY')}
+OPEN_FOOD_FACTS_URL = 'https://static.openfoodfacts.org/data/en.openfoodfacts.org.products.csv'
 OUTPUT_FILENAME = 'fr.openfoodfacts.org.products.csv'
 
 default_args = {
@@ -26,7 +25,7 @@ default_args = {
 def fetch_data():
     filename = os.path.join(AIRFLOW_HOME, OUTPUT_FILENAME)
     with open(filename, 'w') as f_out:
-        with closing(requests.get(OPEN_FOOD_FACTS_URL, headers=HEADERS, stream=True)) as r:
+        with closing(requests.get(OPEN_FOOD_FACTS_URL, stream=True)) as r:
             f = (line.decode('utf-8') for line in r.iter_lines())
             for line in f:
                 f_out.write(line)

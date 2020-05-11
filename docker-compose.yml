@@ -11,5 +11,3 @@ services:
       - "8080:8080"
     volumes:
       - ./dags:/usr/local/airflow/dags
-    environment:
-      - DATA_FR_API_KEY=${DATA_FR_API_KEY}
