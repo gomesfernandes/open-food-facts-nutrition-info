@@ -1,8 +1,11 @@
 fr.openfoodfacts.org.products.csv
 *.csv
 results/*
+.env
 
+*/__pycache__/*
 .idea/*
+dags/.idea/*
 *.iml
 *.ipr
 cmake-build-*/

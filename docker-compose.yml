@@ -1,0 +1,15 @@
+version: '3.0'
+services:
+  airflow:
+    image: puckel/docker-airflow:1.10.9
+    build:
+      context: .
+      args:
+        PYTHON_DEPS: requests
+    restart: always
+    ports:
+      - "8080:8080"
+    volumes:
+      - ./dags:/usr/local/airflow/dags
+    environment:
+      - DATA_FR_API_KEY=${DATA_FR_API_KEY}
