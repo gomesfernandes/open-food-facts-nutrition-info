@@ -1,0 +1,6 @@
+target/*
+*.idea/*
+fr.openfoodfacts.org.products.csv
+*.iml
+*/__pycache__/*
+*.DS_Store

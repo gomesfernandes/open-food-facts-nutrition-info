@@ -1,13 +1,15 @@
 version: '3.0'
 services:
   airflow:
-    image: puckel/docker-airflow:1.10.9
-    build:
-      context: .
-      args:
-        PYTHON_DEPS: requests
+    build: .
     restart: always
     ports:
       - "8080:8080"
+    environment:
+      - BEAM_SRC_HOME=${PWD}
+      - MVN_REPO=${HOME}/.m2
     volumes:
       - ./dags:/usr/local/airflow/dags
+      - ./results:/usr/local/airflow/dags/results
+      - ./requirements.txt:/requirements.txt
+      - /var/run/docker.sock:/var/run/docker.sock
