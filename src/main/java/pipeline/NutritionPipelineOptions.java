@@ -15,7 +15,7 @@ public interface NutritionPipelineOptions extends PipelineOptions {
 
     /** Set this required option to specify where to write the output. */
     @Description("Path of the file to write to (local file or Google Cloud Storage bucket)")
-    @Default.String("results/open-food-facts-result")
+    @Default.String("outputs/open-food-facts-result")
     String getOutputFile();
     void setOutputFile(String value);
 }

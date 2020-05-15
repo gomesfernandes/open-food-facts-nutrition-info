@@ -9,9 +9,11 @@ The original dataset can be found on the [Open Food Facts website](https://fr.op
 [data.gouv.fr](https://www.data.gouv.fr/fr/datasets/open-food-facts-produits-alimentaires-ingredients-nutrition-labels/).
 
 
-### Code overview
+### Overview
 
-`src` and contains de Java source code for the Apache Beam pipeline
+**Local run**: To run the pipeline locally on the manually downloaded dataset, compile and
+run the Apache Beam pipeline (`src` folder and `pom.xml` file).
 
-`dags` contains the Python source code to build the Apache Airflow DAG that fetches the Open Food Facts dataset, 
-runs the Apache Beam pipeline (todo) and cleans up the results into a single file.
+**Using Docker**: Running `docker-compose -f docker-compose.yml up -d` will set up an Apache Airflow webserver
+with a UI accessible at `localhost:8080`. Triggering the open-food-facts-DAG will fetch the Open Food Facts 
+dataset, compile and run the Apache Beam pipeline and clean up the results into a single file.

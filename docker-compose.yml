@@ -7,9 +7,8 @@ services:
       - "8080:8080"
     environment:
       - BEAM_SRC_HOME=${PWD}
-      - MVN_REPO=${HOME}/.m2
     volumes:
       - ./dags:/usr/local/airflow/dags
-      - ./results:/usr/local/airflow/dags/results
+      - ./outputs:/usr/local/airflow/outputs
       - ./requirements.txt:/requirements.txt
       - /var/run/docker.sock:/var/run/docker.sock
